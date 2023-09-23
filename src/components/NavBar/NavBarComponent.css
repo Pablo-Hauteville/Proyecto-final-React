@@ -1,0 +1,15 @@
+
+.brand-style {
+    text-decoration: none;
+    font-size: larger;
+    color: red;
+    
+}
+.Line {
+    text-decoration: none;
+    color: green;
+}
+
+.text-laptop, .text-smartphones {
+    text-decoration: none;
+}

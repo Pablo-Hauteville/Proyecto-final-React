@@ -1,0 +1,26 @@
+
+
+
+.item-list-container {
+    
+ /*    border: 0px solid #ccc;
+    padding: 50px;
+    margin: 10px;
+    text-align: center;
+    background-color: #f7f7f7;
+  }
+   */
+
+    margin: 10px;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #f7f7f7;
+    
+    
+
+
+  }
