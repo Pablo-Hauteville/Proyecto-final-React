@@ -4,6 +4,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainLayout from './layouts/MainLayout';
 import MainRouter from './routes/MainRouter';
+import { CartProvider } from './CartContext/CartContext';
 
 
 
@@ -12,9 +13,11 @@ const App =() => {
     
   return (
   
-    <MainLayout>
+    <CartProvider>
+      <MainLayout>
       <MainRouter />
-    </MainLayout>
+      </MainLayout>
+    </CartProvider>
   
 
    

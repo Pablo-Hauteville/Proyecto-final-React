@@ -2,6 +2,7 @@ import React from 'react'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Button } from 'react-bootstrap';
+import ItemCount from '../../ItemCount/ItemCount';
 
 
 
@@ -21,9 +22,9 @@ const ItemDetailContainer = ({productData}) => {
         <ListGroup.Item>{productData.description}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-        <Button style={{ background: "green", border:"none"}}>Comprar</Button>
-        <Button >Agregar al carrito</Button>
-        <Button style={{ background: "red", border:"none"}}>Volver</Button>
+      <ItemCount />
+        <Button style={{ background: "green", border:"none", width: "150px", height:"50px", marginTop: "10px"}}>Comprar</Button>
+        <Button style={{ background: "green", border:"none", width: "150px", height:"50px", marginTop: "10px"}}>Agregar al carrito</Button>
         
       </Card.Body>
     </Card>
