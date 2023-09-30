@@ -4,6 +4,8 @@ import { Button } from 'react-bootstrap';
 
 const AddCart = ({ productData }) => {
   const handleAddToCart = () => {
+
+    console.log("Agregando al carrito");
     
     const producto = {
       id: productData.id, 

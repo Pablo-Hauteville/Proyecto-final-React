@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import "./CheckoutModal.css";
+import HandleRemoveProduct from '../HandleRemoveProduct/HandleRemoveProduct';
 
-const CheckoutModal = ({ show, handleClose, cart }) => {
+const CheckoutModal = ({ show, handleClose, cart, handleRemoveProduct }) => {
 
-  const [cartItems, setCartItems] = useState(cart);
+  const [localCart, setLocalCart] = useState(cart);
 
   const grupProducts = {};
 
   let total = 0;
-  for (const producto of cart) {
+  for (const producto of localCart) { 
     const productoId = producto.id;
     total += parseInt(producto.precio);
 
@@ -23,29 +24,21 @@ const CheckoutModal = ({ show, handleClose, cart }) => {
     }
   }
 
-  const handleRemoveProduct = (productId) => {
-    const updatedCart = cartItems.filter(producto => producto.id !== productId);
-    setCartItems(updatedCart);
-    sessionStorage.setItem("cart", JSON.stringify(updatedCart));
-  } 
-  console.log()
-
   return (
     <Modal show={show} onHide={handleClose} dialogClassName='modal-custom'>
       <Modal.Header closeButton>
         <Modal.Title>Tu carrito</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-
         {Object.values(grupProducts).map((producto) => (
           <div key={producto.id}>
             <p>{producto.nombre}</p>
             <p>Cantidad: {producto.cantidad}</p>
             <p>Precio: USD $ {producto.precio}</p>
-            <Button onClick={() => handleRemoveProduct(producto.id)}>Eliminar</Button>
+            <HandleRemoveProduct onRemoveClick={() => { handleRemoveProduct(producto.id); setLocalCart(prevCart => prevCart.filter(item => item.id !== producto.id)); }} />
+
           </div>
         ))}
-
         <div className="total">
           <p>Total: USD ${total}</p>
         </div>
@@ -61,5 +54,8 @@ const CheckoutModal = ({ show, handleClose, cart }) => {
 }
 
 export default CheckoutModal;
+
+
+
 
 

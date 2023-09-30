@@ -4,6 +4,7 @@ import CheckoutModal from '../CheckoutModal/CheckoutModal';
 
 const HandleBuy = () => {
   const [showModal, setShowModal] = useState(false);
+  const [cart, setCart] = useState(JSON.parse(sessionStorage.getItem('cart')) || []);
 
   const handleBuyClick = () => {
     setShowModal(true);
@@ -13,7 +14,11 @@ const HandleBuy = () => {
     setShowModal(false);
   }
 
-  const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+  const handleRemoveProduct = (productId) => {
+    const updatedCart = cart.filter(producto => producto.id !== productId);
+    setCart(updatedCart);
+    sessionStorage.setItem("cart", JSON.stringify(updatedCart));
+  }
 
   return (
     <div>
@@ -24,11 +29,14 @@ const HandleBuy = () => {
         show={showModal} 
         handleClose={handleCloseModal} 
         cart={cart} 
+        handleRemoveProduct={handleRemoveProduct} 
       />
     </div>
   )
 }
 
 export default HandleBuy;
+
+
 
 
