@@ -3,13 +3,15 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Button } from 'react-bootstrap';
 import ItemCount from '../../ItemCount/ItemCount';
+import HandleBuy from '../HandleBuy/Handlebuy';
+import AddCart from '../../AddCart/AddCart';
 
 
 
 const ItemDetailContainer = ({productData}) => {
   console.log(productData);
   return (
-    <Card style={{ maxWidth: '45rem'}}>
+    <Card style={{ maxWidth: '45rem'}} key={productData.id}>
       <Card.Img variant="top" src={productData.thumbnail} />
       <Card.Body>
         <Card.Title>{productData.title}</Card.Title>
@@ -24,12 +26,13 @@ const ItemDetailContainer = ({productData}) => {
       </ListGroup>
       <Card.Body>
       <ItemCount />
-        <Button style={{ background: "green", border:"none", width: "150px", height:"50px", margin: "10px"}}>Comprar</Button>
-        <Button style={{ background: "green", border:"none", width: "150px", height:"50px", margin: "10px"}}>Agregar al carrito</Button>
+        <HandleBuy />
+        <AddCart productData={productData} />
+
         
       </Card.Body>
     </Card>
   )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

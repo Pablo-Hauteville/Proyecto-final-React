@@ -1,0 +1,7 @@
+
+.modal-custom .modal-content .cart-product-list {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+  
