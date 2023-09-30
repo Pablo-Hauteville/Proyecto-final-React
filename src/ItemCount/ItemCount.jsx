@@ -7,18 +7,22 @@ const [count, setCount] = useState(0);
 
 const { cartItems, setCartItems} = useContext (CartContext);
 
-const handleAddProducts = () => { setCartItems(cartItems + 1); setCount(count+1); }
+const handleAddProducts = () => { 
+  setCartItems(cartItems + 1); setCount(count + 1); }
 
 
 
-const handleRemoveProducts = () => { setCartItems(cartItems - 1); setCount(count-1);}
+const handleRemoveProducts = () => { 
+  if (cartItems > 1) { setCartItems(cartItems - 1); setCount(count - 1);
+  }
+}
 
 
   return (
     <div>
-    <Button onClick={handleRemoveProducts}>-</Button>
+    <Button onClick={handleRemoveProducts} style= {{margin: "5px"}}>-</Button>
     <label>{count}</label>
-    <Button onClick={handleAddProducts}>+</Button>
+    <Button onClick={handleAddProducts} style= {{margin: "5px"}}>+</Button>
     </div>
   )
 }

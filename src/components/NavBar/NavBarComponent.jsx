@@ -10,16 +10,21 @@ const NavBarComponent = ()=> {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand className="Logo-Brand"><Link to="/" className='brand-style'><b>Pablo's Store</b></Link></Navbar.Brand>
+        <Navbar.Brand className="Logo-Brand"><Link to="/" className='brand-style'><b>Pablo's Music $tore</b></Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link> <Link to="/" className='Line'>Home</Link></Nav.Link>
-            <Nav.Link href="#link">Notificaciones</Nav.Link>
+            
             <NavDropdown title="Categorías" id="basic-nav-dropdown">
-              <NavDropdown.Item><Link to="/category/laptops" className='text-laptop'>Laptops</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link to="/category/smartphones" className='text-smartphones'>Smartphones</Link>
-              </NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/guitarras" className='text-guitarras'>Guitarras</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/bajos" className='text-bajos'>Bajos</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/percucion" className='text-percucion'>Percución</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/amplificacion" className='text-amplificacion'>Amplificación</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/Accesorios" className='text-Accesorios'>Accesorios</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/teclados" className='text-teclados'>Teclados/controladores MIDI</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/category/Efectos" className='text-Efectos'>Efectos</Link></NavDropdown.Item>
+              
               <NavDropdown.Divider />
             </NavDropdown>
           </Nav>

@@ -1,28 +1,36 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import {  useEffect, useState } from 'react'
-import axios from 'axios'
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailContainer'
+import LoaderComponent from '../components/Loader/loaderComponent';
 
 
-function getProductById (id) {  
-  return axios.get(`https://dummyjson.com/products/${id}`);
-}
 
 const ItemDetails = () => {
+  const [ loading, setLoading ] = useState (true);
+
   const [ product, setProduct ] = useState({});
-  const {itemId} = useParams ()
+
+  const {itemId} = useParams ();
 
   useEffect(() => {
-    getProductById(itemId)
-    .then((res)=> {setProduct(res.data)})
 
-    .catch((err) => {});
+    const db= getFirestore();
+
+    const productItem = doc(db, "products", itemId);
+    getDoc(productItem).then(( snapshot ) => {setProduct({id: snapshot.id, ...snapshot.data()})}
+    );
+
+    setLoading(false);
+
+
+
   }, [itemId]);
  
 
 
-  return <ItemDetailContainer productData={product} /> 
+  return loading ? <LoaderComponent /> : <ItemDetailContainer productData={product} /> 
 };
 
 export default ItemDetails

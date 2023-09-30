@@ -22,7 +22,7 @@ const navigate = useNavigate ();
               <Card.Body>
                 <Card.Title>{product.title}</Card.Title>
                 <Card.Text>
-                  {product.description}
+                  {product.shortDescription}
                 </Card.Text>
                 <Card.Text>
                   {"USD$"+ product.price}

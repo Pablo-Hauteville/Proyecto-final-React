@@ -1,8 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inter:wght@100;400;500&family=Permanent+Marker&family=Source+Code+Pro:wght@200;400;600&display=swap');
+
+
+
+
 
 .brand-style {
-    text-decoration: none;
-    font-size: larger;
-    color: red;
+    font-family: 'Indie Flower', cursive;
+  color: #f5efef;
+  font-size: 35px;
+  background-color: #000000;
+  padding-top: 5px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-right: 5px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
     
 }
 .Line {

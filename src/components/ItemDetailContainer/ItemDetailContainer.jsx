@@ -7,13 +7,14 @@ import ItemCount from '../../ItemCount/ItemCount';
 
 
 const ItemDetailContainer = ({productData}) => {
+  console.log(productData);
   return (
-    <Card style={{ width: '50rem' }}>
+    <Card style={{ maxWidth: '45rem'}}>
       <Card.Img variant="top" src={productData.thumbnail} />
       <Card.Body>
         <Card.Title>{productData.title}</Card.Title>
         <Card.Text>
-        {productData.description}
+        {productData.shortDescription}
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
@@ -23,8 +24,8 @@ const ItemDetailContainer = ({productData}) => {
       </ListGroup>
       <Card.Body>
       <ItemCount />
-        <Button style={{ background: "green", border:"none", width: "150px", height:"50px", marginTop: "10px"}}>Comprar</Button>
-        <Button style={{ background: "green", border:"none", width: "150px", height:"50px", marginTop: "10px"}}>Agregar al carrito</Button>
+        <Button style={{ background: "green", border:"none", width: "150px", height:"50px", margin: "10px"}}>Comprar</Button>
+        <Button style={{ background: "green", border:"none", width: "150px", height:"50px", margin: "10px"}}>Agregar al carrito</Button>
         
       </Card.Body>
     </Card>

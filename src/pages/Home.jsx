@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { collection, getDocs, getFirestore} from "firebase/firestore"
 import ItemListContainer from '../ItemListContainer/ItemListContainer'
-import axios from 'axios'
 import LoaderComponent from '../components/Loader/loaderComponent'
 
-
-
-function getProducts () {
-  return axios.get("https://dummyjson.com/products")
-}
 
 
 const Home = () => {
@@ -16,10 +11,14 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(()=> {
-    getProducts()
-    .then((res)=> {setProducts(res.data.products);})
-    .catch((err) => {})
-    .finally(()=> setLoading(false));
+    const db = getFirestore();
+    
+    const productsCollection = collection (db,"products");
+
+    getDocs(productsCollection).then((snapshot) => {
+    setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    });
+    setLoading(false);
 
   }, [] );
 
