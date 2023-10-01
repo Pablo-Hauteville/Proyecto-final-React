@@ -27,24 +27,24 @@ const CheckoutModal = ({ show, handleClose, cart, handleRemoveProduct }) => {
   return (
     <Modal show={show} onHide={handleClose} dialogClassName='modal-custom'>
       <Modal.Header closeButton>
-        <Modal.Title>Tu carrito</Modal.Title>
+        <Modal.Title style={{fontSize:"35px"}}>Tu carrito</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {Object.values(grupProducts).map((producto) => (
-          <div key={producto.id}>
-            <p>{producto.nombre}</p>
+          <div key={producto.id} style={{fontSize:"20px"}}>
+            <p style={{fontSize:"25px"}}>{producto.nombre}</p>
             <p>Cantidad: {producto.cantidad}</p>
-            <p>Precio: USD $ {producto.precio}</p>
+            <p>Precio: USD ${producto.precio}</p>
             <HandleRemoveProduct onRemoveClick={() => { handleRemoveProduct(producto.id); setLocalCart(prevCart => prevCart.filter(item => item.id !== producto.id)); }} />
 
           </div>
         ))}
-        <div className="total">
-          <p>Total: USD ${total}</p>
+        <div style={{fontSize:"30px", textAlign:"center"}}>
+          <p>Total: USD${total}</p>
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button>Continuar compra</Button>
+        <Button style={{fontSize:"25px"}}>Continuar compra</Button>
         <Button variant="secondary" onClick={handleClose}>
           Cerrar
         </Button>

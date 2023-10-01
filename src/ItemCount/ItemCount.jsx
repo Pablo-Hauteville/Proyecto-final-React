@@ -20,9 +20,9 @@ const handleRemoveProducts = () => {
 
   return (
     <div>
-    <Button onClick={handleRemoveProducts} style= {{margin: "5px"}}>-</Button>
-    <label>{count}</label>
-    <Button onClick={handleAddProducts} style= {{margin: "5px"}}>+</Button>
+    <Button onClick={handleRemoveProducts} style= {{fontSize: "30px", margin: "5px"}}>-</Button>
+    <label style={{fontSize:"20px"}}>{count}</label>
+    <Button onClick={handleAddProducts} style= {{fontSize: "30px", margin: "5px"}}>+</Button>
     </div>
   )
 }

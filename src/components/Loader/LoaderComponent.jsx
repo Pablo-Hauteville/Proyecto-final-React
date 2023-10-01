@@ -15,7 +15,7 @@ const LoaderComponent = () => {
 
    size={100}
    speed={1.4} 
-   color="black" 
+   color="white" 
    
   />
   </div>

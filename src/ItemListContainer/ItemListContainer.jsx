@@ -20,15 +20,16 @@ const navigate = useNavigate ();
             <Card style={{ width: '18rem', height: '40rem', overflowY: 'auto' }} key={product.id}>
               <Card.Img variant="top" src={product.thumbnail} />
               <Card.Body>
-                <Card.Title>{product.title}</Card.Title>
-                <Card.Text>
+                <Card.Title style={{fontSize: "25px"}}>{product.title}</Card.Title>
+                <Card.Text style={{fontSize: "18px"}}>
                   {product.shortDescription}
                 </Card.Text>
-                <Card.Text>
+                <Card.Text style={{fontSize: "25px"}}>
                   {"USD$"+ product.price}
                 </Card.Text>           
 
-                <Button variant="primary" onClick={()=> navigate (`/item/${product.id}`)}>Ver detalle de producto</Button>
+                <Button variant="primary" onClick={()=> navigate (`/item/${product.id}`)} style={{marginTop: "auto", marginLeft: "auto", display: "block"}}>
+                Ver detalle de producto</Button>
               </Card.Body>
             </Card>
             

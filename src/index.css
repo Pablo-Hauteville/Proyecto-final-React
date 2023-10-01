@@ -1,4 +1,14 @@
+
+
+body {
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/tienda-music-store.appspot.com/o/walpaper.jpg?alt=media&token=c85f1e9b-e069-4e30-9ba1-9fc0aea6453b&_gl=1*a8vy8v*_ga*MTM4NTU0NTY0NS4xNjk0NjQ5MzA0*_ga_CW55HF8NVT*MTY5NjExNjgzNi4xMC4xLjE2OTYxMTY4NDguNDguMC4w');
+  background-size: cover; 
+  background-repeat: no-repeat; 
+}
+
+
 /* :root {
+  
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;

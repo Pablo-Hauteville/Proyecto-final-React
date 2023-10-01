@@ -2,13 +2,34 @@
 
 
 
+.bg-body-nav{
 
+    background-color: rgb(75, 101, 248);
+    
+}
+
+.nav-dropdown-title > a.nav-link {
+    font-size: x-large;
+    color: white !important;
+  }
+  
+.dropdown-menu {
+    
+    background-color: #454642ef;
+}
+
+.line, .text-cat {
+    
+    font-size: x-large;
+    text-decoration: none;
+    color: beige;
+}
 
 .brand-style {
     font-family: 'Indie Flower', cursive;
-  color: #f5efef;
+  color: #2f1575;
   font-size: 35px;
-  background-color: #000000;
+  background-color: #d3ca4c;
   padding-top: 5px;
   padding-left: 100px;
   padding-right: 100px;
@@ -19,7 +40,7 @@
 }
 .Line {
     text-decoration: none;
-    color: green;
+    color: rgb(0, 0, 0);
 }
 
 .text-laptop, .text-smartphones {

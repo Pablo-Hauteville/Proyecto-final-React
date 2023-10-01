@@ -22,7 +22,7 @@ const HandleBuy = () => {
 
   return (
     <div>
-      <Button onClick={handleBuyClick} style={{ background: "green", border:"none", width: "150px", height:"50px", margin: "10px"}}>
+      <Button onClick={handleBuyClick} style={{ background: "green", border:"none", width: "300px", height:"70px", margin: "10px", fontSize:"25px"}}>
         Comprar Ahora
       </Button> 
       <CheckoutModal 

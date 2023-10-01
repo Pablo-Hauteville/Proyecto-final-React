@@ -39,7 +39,7 @@ const Category = () => {
   }
     
   if (filteredProducts.length === 0) {
-    return <div className='not-found'>No encontramos ningún producto</div>;
+    return <div style={{fontSize:"50px", backgroundColor: "black", color: "white", position: "relative", marginTop:"200px"}}>Lo sentimos, no encontramos ningún producto</div>;
   }
 
   return <ItemListContainer productsData={filteredProducts} />;
